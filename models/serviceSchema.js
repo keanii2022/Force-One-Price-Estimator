@@ -7,3 +7,5 @@ const serviceSchema = new Schema({
 },{
     timestamps: true
 })
+
+module.exports = serviceSchema
