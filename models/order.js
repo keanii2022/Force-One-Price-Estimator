@@ -24,10 +24,10 @@ const orderSchema = new Schema({
 })
 
 orderSchema.virtual('orderTotal').get(function() {
-    return this.lineItems.reduce((total, item) => total + item.qty, 0)
+    return this.lineItems.reduce((total, service) => total + service.qty, 0)
 })
 orderSchema.virtual('totalQty').get(function() {
-    return this.lineItems.reduce((total, item) => total + item.qty, 0)
+    return this.lineItems.reduce((total, service) => total + service.qty, 0)
 })
 orderSchema.virtual('orderId').get(function(){
     return this.id.slice(-6).toUpperCase()
@@ -42,21 +42,21 @@ orderSchema.statics.getCart = function(userId) {
     )
 }
 
-orderSchema.methods.addServiceToCart = async function(itemId) {
+orderSchema.methods.addServiceToCart = async function(serviceId) {
     const cart = this;
-    const lineItem = cart.lineItems.find(lineItem => lineItem.item._id.equals(itemId))
+    const lineItem = cart.lineItems.find(lineItem => lineItem.service._id.equals(serviceId))
     if (lineItem) {
         lineItem.qty += 1;
     } else {
-        const item = await mongoose.model('Item').findById(itemId)
+        const service = await mongoose.model('Service').findById(serviceId)
         cart.lineItems.push({ service })
     }
     return cart.save()
 }
 
-orderSchema.methods.setItemQty = function(itemId, newQty) {
+orderSchema.methods.setItemQty = function(serviceId, newQty) {
     const cart = this
-    const lineItem = cart.lineItems.find(lineItem => lineItem.service._id.equals(itemId))
+    const lineItem = cart.lineItems.find(lineItem => lineItem.service._id.equals(serviceId))
     if (lineItem && newQty <= 0 ) {
         lineItem.remove()
     } else if (lineItem) {
