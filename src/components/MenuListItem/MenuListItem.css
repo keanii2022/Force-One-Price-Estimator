@@ -3,21 +3,21 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 3vmin;
+    margin-bottom: 7vmin;
     padding: 2vmin;
     color: var(--text-light);
-    background-color: var(--white);
+    background-color: rgb(255, 147, 147);
     border: .1vmin solid var(--tan-3);
-    border-radius: 1vmin;
+    border-radius: 6vmin;
     font-size: 4vmin;
   }
   
   .MenuListItem .emoji {
-    height: 8vw;
-    width: 8vw;
-    font-size: 4vw;
-    background-color: var(--tan-1);
-    border: .1vmin solid var(--tan-3);
+    height: 5vw;
+    width: 5vw;
+    font-size: 3vw;
+    background-color: rgb(255, 147, 147);
+    border: 0vmin solid;
     border-radius: 1vmin;
   }
   
@@ -27,13 +27,13 @@
   }
   
   .MenuListItem .buy span {
-    font-size: 1.7vw;
+    font-size: 1.2vw;
     text-align: center;
-    color: var(--text-light);
+    color: hsl(70, 100%, 56%);
   }
   
   .MenuListItem .name {
-    font-size: 2vw;
+    font-size: 1.5vw;
     text-align: center;
     color: var(--text-light);
   }

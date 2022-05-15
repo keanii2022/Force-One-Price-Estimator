@@ -1,0 +1,9 @@
+.MenuList {
+    background-color: rgb(249, 176, 229);
+    border: .1vmin solid paleturquoise;
+    border-radius: 5vmin;
+    margin: 9vmin 0;
+    padding: 7vmin;
+    overflow-y: scroll;
+  }
+  

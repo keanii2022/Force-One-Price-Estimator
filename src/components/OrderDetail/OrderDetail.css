@@ -3,7 +3,7 @@
     justify-content: flex-start;
     align-items: center;
     padding: 3vmin;
-    font-size: 2vmin;
+    font-size: 5vmin;
     color: var(--text-light);
   }
   
@@ -21,7 +21,7 @@
   .OrderDetail .total {
     width: 100%;
     display: grid;
-    grid-template-columns: 18.35vw 5.75vw 5.25vw;
+    grid-template-columns: 8.35vw 6.75vw 13.25vw;
     padding: 1vmin 0;
     color: var(--text-light);
     border-top: .1vmin solid var(--tan-3);
@@ -31,7 +31,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1.5vw;
+    font-size: 1.2vw;
     color: var(--text-dark);
   }
   
